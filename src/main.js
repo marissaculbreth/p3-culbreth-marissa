@@ -27,7 +27,7 @@ function loopThrough() {
 };
 
 
-// Swap Layer
+// Swap Layer from color to number
 function changeLayer() {
   const swap = () => {
     layerOne.classList.add('hide');
@@ -48,7 +48,7 @@ function loopThroughNumbers() {
 };
 
 
-// Swap Layer
+// Swap Layer from number to number
 function changeLayerThree() {
   const swapNumbers = () => {
     layerTwo.classList.add('hide');
@@ -69,11 +69,25 @@ function loopThroughNumbersAgain() {
 };
 
 
-// Swap Layer changeNumberAgain
+// Swap Layer from numbers to quote
 function changeLayerFour() {
   const swapQuote = () => {
     layerThree.classList.add('hide');
     layerFour.classList.remove('hide');
+
+    // Random quote code
+    const quoteItems = ['You are beautiful', 'You are worthy', 'Change the world by being yourself', 'All limitations are self-imposed', 'Reality is wrong, dreams are for real', 'Strive for greatness', 'Turn your wounds into wisdom', 'Happiness depends upon ourselves', 'When words fail, music speaks', 'The meaning of life is to give life meaning'];
+
+    const randomizeQuotes = () => {
+      quoteItems.sort((a, b) => {return 0.5 - Math.random()});
+
+      const quoteTextNode = document.createTextNode(quoteItems[0]);
+
+      const quotePara = document.createElement('p');
+      quotePara.appendChild(quoteTextNode)
+      layerFour.appendChild(quotePara);
+    }
+
   }
   setTimeout(swapQuote, this.textContent.length * 2 * 1000);
 };
@@ -85,5 +99,5 @@ for (let i = 0; i < myButtons.length; i++) {
   myButtonsLayerTwo[i].addEventListener('click', loopThroughNumbers);
   myButtonsLayerTwo[i].addEventListener('click', changeLayerThree);
   myButtonsLayerThree[i].addEventListener('click', loopThroughNumbersAgain);
-  myRandomQuote[i].addEventListener('click', changeLayerFour);
+  layerFour.addEventListener('click', changeLayerFour);
 }
