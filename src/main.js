@@ -79,7 +79,9 @@ function changeLayerFour() {
     const quoteItems = ['You are beautiful', 'You are worthy', 'Change the world by being yourself', 'All limitations are self-imposed', 'Reality is wrong, dreams are for real', 'Strive for greatness', 'Turn your wounds into wisdom', 'Happiness depends upon ourselves', 'When words fail, music speaks', 'The meaning of life is to give life meaning'];
 
     const randomizeQuotes = () => {
-      quoteItems.sort((a, b) => {return 0.5 - Math.random()});
+      quoteItems.sort((a, b) => {
+        return 0.5 - Math.random()
+      });
 
       const quoteTextNode = document.createTextNode(quoteItems[0]);
 
