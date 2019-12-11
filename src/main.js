@@ -33,7 +33,7 @@ function changeLayer() {
     layerOne.classList.add('hide');
     layerTwo.classList.remove('hide');
   }
-  setTimeout(swap, this.textContent.length * 2 * 1000);
+  setTimeout(swap, Number(this.textContent.length) * 2 * 1000);
 };
 
 
@@ -42,7 +42,7 @@ function loopThroughNumbers() {
   const changeNumber = () => {
     this.classList.toggle('grey');
   };
-  for (let i = 0; i < this.textContent.length * 2; i++) {
+  for (let i = 0; i < Number(this.textContent.length) * 2; i++) {
     setTimeout(changeNumber, i * 1000);
   }
 };
@@ -54,7 +54,7 @@ function changeLayerThree() {
     layerTwo.classList.add('hide');
     layerThree.classList.remove('hide');
   }
-  setTimeout(swapNumbers, this.textContent.length * 2 * 1000);
+  setTimeout(swapNumbers, Number(this.textContent.length) * 2 * 1000);
 };
 
 
@@ -92,6 +92,7 @@ function changeLayerFour() {
 
   }
   setTimeout(swapQuote, this.textContent.length * 2 * 1000);
+  randomizeQuotes();
 };
 
 
@@ -101,5 +102,6 @@ for (let i = 0; i < myButtons.length; i++) {
   myButtonsLayerTwo[i].addEventListener('click', loopThroughNumbers);
   myButtonsLayerTwo[i].addEventListener('click', changeLayerThree);
   myButtonsLayerThree[i].addEventListener('click', loopThroughNumbersAgain);
+  myButtonsLayerThree[i].addEventListener('click', changeLayerFour);
   layerFour.addEventListener('click', changeLayerFour);
 }
